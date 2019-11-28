@@ -5,7 +5,7 @@ UniLanguage is a dataset of proteins that has been scraped from UniProt (2019-10
 UniLanguage is homology partitioned, split by domain, fragments, and quality (experimental vs. predicted).
 We provide baselines on UniLanguage using N-gram and Recurrent Neural Network Language Models (RNN-LM).
 How to download the dataset can be found near the bottom of this post.
-The provided [code] to reproduce our results comes with automatic dataset downloading.
+The provided [code](github) to reproduce our results comes with automatic dataset downloading.
 
 ## What is language modelling?
 Language modeling is the task of generating a probability distribution over a sequence.
