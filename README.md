@@ -17,7 +17,7 @@ E.g. many proteins are more than 90% identical; ruining the i.i.d. assumption of
 
 ## Contribution
 **We provide a language modeling dataset** that takes all these concerns into account.
-We also provide baselines using the [AWD-LSTM](https://github.com/salesforce/awd-lstm-lm) and optimized with [SigOpt](http://sigopt.com/)
+We also provide baselines using the [AWD-LSTM](https://github.com/salesforce/awd-lstm-lm) that we optimize with bayesian hyperparameter optimization using the free academic license to [SigOpt](http://sigopt.com/).
 
 # What is a Protein? (explanation for the ML researcher)
 Your body consist of many cells with different functions.
