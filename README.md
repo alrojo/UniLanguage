@@ -5,7 +5,7 @@ UniLanguage is a dataset of proteins that has been scraped from UniProt (2019-10
 
 ## What is language modelling?
 Language modeling is the task of generating the next token in a sentence given the past tokens.
-Language models have proven important for learning context and has pushed state-of-the-art in natural language processing, which is why we are now developing language modeling datasets to investigate this technology within the protein domain.
+eanguage models have proven important for learning context and **has pushed state-of-the-art in natural language processing**, which is why we are now developing language modeling datasets to investigate this technology within the protein domain.
 
 ## Why proteins?
 **Proteins have a high similarity to text**: discrete symbols (amino acids), dictionary of up to 25 symbols (similar to characters), average length of 335 (like a paragraph), and access to large databases of unlabelled sequences in UniProt (akin English Wikipedia).
