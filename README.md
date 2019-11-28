@@ -1,39 +1,38 @@
 # What is UniLanguage?
-[PAPER](bioxiv), [CITATION](bioxiv)
+[PAPER](bioxiv)&nbsp;&nbsp;&nbsp;&nbsp;[CITATION](bioxiv)&nbsp;&nbsp;&nbsp;&nbsp;[[CODE](github)]&nbsp;&nbsp;&nbsp;&nbsp;[[DATASET DOWNLOAD](dtu)]
 
 UniLanguage is a dataset of proteins that has been scraped from UniProt (2019-10-01) for the purpose of **language modeling on protein sequences**.
+UniLanguage is homology partitioned, split by domain, fragments, and quality (experimental vs. predicted).
+We provide baselines on UniLanguage using N-gram and Recurrent Neural Network Language Models (RNN-LM).
+How to download the dataset can be found near the bottom of this post.
+The provided [code] to reproduce our results comes with automatic dataset downloading.
 
 ## What is language modelling?
-Language modeling is the task of generating the next token in a sentence given the past tokens.
-eanguage models have proven important for learning context and **has pushed state-of-the-art in natural language processing**, which is why we are now developing language modeling datasets to investigate this technology within the protein domain.
+Language modeling is the task of generating a probability distribution over a sequence.
+Leanguage models have proven important for learning context and **has pushed state-of-the-art in natural language processing**, which is why we are now developing language modeling datasets to investigate this technology within the protein domain.
 
 ## Why proteins?
 **Proteins have a high similarity to text**: discrete symbols (amino acids), dictionary of up to 25 symbols (similar to characters), average length of 335 (like a paragraph), and access to large databases of unlabelled sequences in UniProt (akin English Wikipedia).
-Moreover, proteins have many supervised prediction tasks with limited data available.
+Moreover, proteins have many supervised prediction tasks with limited data available (e.g. CullPDB).
 
 ## Protein challenges
-However, many **priors within language cannot be assume for protein sequence**.
-E.g. many proteins are more than 90% identical; ruining the i.i.d. assumption of SGD and train-/val-/test set splits, different domains of life (zebrafish vs. ebola virus) might not have much in common; corresponding to mixing chinese with english, 99% of UniProt has not been experimentally validated, and many proteins are represented only as fragments; often noncontigous.
+**Priors within language cannot be assume for protein sequence**.
+E.g. many proteins are more than 90% identical; ruining the i.i.d. assumption of SGD and train-/val-/test set splits, different domains of life (zebrafish vs. ebola virus) might not have much in common; corresponding to mixing chinese with english text, 99% of UniProt has not been experimentally validated, and many proteins are represented only as fragments; often noncontigous.
 
-## Contribution
-**We provide a language modeling dataset** that takes all these concerns into account.
-We also provide baselines using the [AWD-LSTM](https://github.com/salesforce/awd-lstm-lm) that we optimize with bayesian hyperparameter optimization using the free academic license to [SigOpt](http://sigopt.com/).
-
-# What is a Protein? (explanation for the ML researcher)
-Your body consist of many cells with different functions.
-A cell contains DNA, DNA is a cook book for all the functions your cell can express.
-When you cell wants to express a function it copies subsection of the the DNA (a genome) and turns it into RNA, being the specific function recipe from your DNA cook book.
-The RNA, using its function recipe, then builds the protein. The protein consists of amino acids.
-Cells can contain thoudsands of proteins, below you can see the **Ebola virus** ([taken from PDB](https://pdb101.rcsb.org/motm/178)), notice that it has many copies of the same protein. E.g. the broccoli shaped surface of Glycoprotein.
-
-# Process of creating dataset
-We scrape all of UniProt, **250M proteins as of 2019-10-01**.
+# Process of creating UniLanguage
+We scrape all of UniProt - **250M proteins as of 2019-10-01**.
 The proteins with experimental evidence (high quality, 1% of UniProt) are homology partitioned, with 20% homology, into train-, validation-, and test set with 60% train, 10% validation and 30% test for each domain on both full proteins and fragments.
 
-Predicted proteins (low quality, 99% of UniProt) are homology compared against the validation and testset with 20% homology, if they do not overlap they are kept as a predicted training set.
-This removes about 50% of the predicted proteins (about 100 million!), which truly indicates the amount of overlap in proteins.
+Predicted proteins (low quality, 99% of UniProt) are homology compared against the validation and testset with 20% homology.
+If predicted proteins do not overlap they are kept as a predicted training set, split into domains and fragments.
+This removes about 50% of the predicted proteins (approx. 85 million!), which truly indicates the homogenousness in UniProt proteins.
 
-# The task
+## Baseline
+Our N-gram baseline uses add-one trick ([Jurafsky and Martin](https://web.stanford.edu/~jurafsky/slp3/)).
+Our RNN-LM is implemented with the [AWD-LSTM](https://github.com/salesforce/awd-lstm-lm) architecture.
+We find the optimal hyperparameters for the AWD-LSTM with bayesian hyperparameter optimization using the free academic license to [SigOpt](http://sigopt.com/).
+
+# The challenge
 Build a language model that can predict the next amino acid in a protein sequence.
 Resources on building a language model: [Karpathy blogpost](http://karpathy.github.io/2015/05/21/rnn-effectiveness/), [Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/), [AWD-LSTM](https://github.com/salesforce/awd-lstm-lm), [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/language_model)
 Train it on a training set, e.g. high quality eukarya, and test it on the testset.
@@ -41,24 +40,6 @@ See **if you can beat our performance**.
 If you can, please submit a technical report, e.g. to arxiv, and **[send it to us](mailto:jjalma@dtu.dk)**.
 This way we can keep track of current state-of-the-art on this language modeling dataset.
 
-# Description of properties - Amino acids, Homology, Domain, Fragments, Quality, Uniprot
-For all non bioinformatics people, we have made this layman introduction of the concepts we touch in this dataset
-
-## Amino acids (ML explanation)
-Amino acids are ... and contains 25 different symbols. They always start with M and We add SoP to the end of proteins. 
-
-[A: ... M: Myio...]
-
-## Homology
-
-## Domain
-
-## Fragments
-Show an example
-
-## Quality
-
-## Uniprot
 
 # Overview of datasets and results
 Our task contains multiple datasets for training and testing. We provide the simple version (only Eukarya) and the full version (all datasets, including fragments).
