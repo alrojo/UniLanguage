@@ -27,42 +27,10 @@ Predicted proteins (low quality, 99% of UniProt) are homology compared against t
 If predicted proteins do not overlap they are kept as a predicted training set, split into domains and fragments.
 This removes about 50% of the predicted proteins (approx. 85 million!), which truly indicates the homogenousness in UniProt proteins.
 
-## Baseline
-Our N-gram baseline uses add-one trick ([Jurafsky and Martin](https://web.stanford.edu/~jurafsky/slp3/)).
-Our RNN-LM is implemented with the [AWD-LSTM](https://github.com/salesforce/awd-lstm-lm) architecture.
-We find the optimal hyperparameters for the AWD-LSTM with bayesian hyperparameter optimization using the free academic license to [SigOpt](http://sigopt.com/).
 
-# The challenge
-Build a language model that can predict the next amino acid in a protein sequence.
-Resources on building a language model: [Karpathy blogpost](http://karpathy.github.io/2015/05/21/rnn-effectiveness/), [Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/), [AWD-LSTM](https://github.com/salesforce/awd-lstm-lm), [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/language_model)
-Train it on a training set, e.g. high quality eukarya, and test it on the testset.
-See **if you can beat our performance**.
-If you can, please submit a technical report, e.g. to arxiv, and **[send it to us](mailto:jjalma@dtu.dk)**.
-This way we can keep track of current state-of-the-art on this language modeling dataset.
+# Dataset and results
+We provide train, validation and testsets for all domains. Notice that fragments are also included for validation and testing, but we do not use them in our work.
 
-
-# Overview of datasets and results
-Our task contains multiple datasets for training and testing. We provide the simple version (only Eukarya) and the full version (all datasets, including fragments).
-Notice that the full dataset also contains fragments for validation and testing. This is a result of our homology partitioning, we provide them, but do not use them in our own results.
-
-## Simple (ML reseachers)
-For simplicity we of having one validation and testset, we provide links here to the Eukarya validation, test, high quality train, and low quality train.
-
-| Link         | Partitions | Domain   | Quality | Samples | Mean Length | Fragments |
-|--------------|------------|----------|---------|---------|-------------|-----------|
-| [Download]() | Train      | Eukarya  | High    |         |             | No        |
-| [Download]() | Train      | Eukarya  | Low     |         |             | No        |
-| [Download]() | Valid      | Eukarya  | High    |         |             | No        |
-| [Download]() | Test       | Eukarya  | High    |         |             | No        |
-
-## Simple results
-| Training set | Validation perplexity | Test perplexity |
-|--------------|-----------------------|-----------------|
-| High quality |                       | 14.04           |
-| Low quality  |                       | 14.67           |
-| Combined     |                       | 14.28           |
-
-## All datasets
 | Link         | Partitions | Domain   | Quality | Samples | Mean Length | Fragments |
 |--------------|------------|----------|---------|---------|-------------|-----------|
 | [Download]() | Train      | Eukarya  | High    |         |             | No        |
@@ -92,7 +60,15 @@ For simplicity we of having one validation and testset, we provide links here to
 | [Download]() | Valid      | Virus    | High    |         |             | No        |
 | [Download]() | Test       | Virus    | High    |         |             | No        |
 
-## Results all data
+#Our model
+## Baselines
+Our N-gram baseline uses add-one trick ([Jurafsky and Martin](https://web.stanford.edu/~jurafsky/slp3/)).
+Our RNN-LM is implemented with the [AWD-LSTM](https://github.com/salesforce/awd-lstm-lm) architecture.
+We find the optimal hyperparameters for the AWD-LSTM with bayesian hyperparameter optimization using the free academic license to [SigOpt](http://sigopt.com/).
+
+## Results for N-Gram
+
+## Results for Recurrent Neural Network
 | Domain   | Training set          | Validation perplexity | Test perplexity |
 |----------|-----------------------|-----------------------|-----------------|
 | Eukarya  | Euk_exp, Euk_pred     |                       | 14.28           |
@@ -101,8 +77,7 @@ For simplicity we of having one validation and testset, we provide links here to
 | Virus    | Virus_exp, Virus_pred |                       | 17.17           |
 | Mean     |                       |                       | 14.32           |
 
-Please see the result section of our [paper]() for extended results, such as using all domains together, only using predicted, or only using experimental.
-
 # Citation
-[PAPER](bioxiv)
+[[PAPER](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CITATION](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CODE](github)]&nbsp;&nbsp;&nbsp;&nbsp;[[DATASET DOWNLOAD](dtu)]
+
 PUT IN CITATION
