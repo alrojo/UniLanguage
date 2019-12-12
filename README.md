@@ -28,7 +28,14 @@ This removes about 50% of the predicted proteins (approx. 85 million!), which tr
 # Dataset and results
 We provide a [script]() to obtain train, validation and test sets for all domains, qualities and protein completion.
 
-Examples of script usage:
+## Script usage
+
+```python get_stuff --domain [domain] --complete [complete] --quality [quality]```
+
+Parameters:
+* Domain: [euk, bac, arc, vir]
+* Complete: [full, frag]
+* Quality: [exp, pred]
 
 Example 1
 
