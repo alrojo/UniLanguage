@@ -29,12 +29,19 @@ This removes about 50% of the predicted proteins (approx. 85 million!), which tr
 We provide a [script]() to obtain train, validation and test sets for all domains, qualities and protein completion.
 
 Examples of script usage:
+
 Example 1
+
 ```sample 1```
+
 Example 2
+
 ```sample 2```
+
 Examples 3
+
 ```sample 3```
+
 # Citation
 [[PAPER](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CITATION](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CODE](github)]&nbsp;&nbsp;&nbsp;&nbsp;[[DATASET DOWNLOAD](dtu)]
 
