@@ -26,37 +26,15 @@ If predicted proteins do not overlap they are kept as a predicted training set, 
 This removes about 50% of the predicted proteins (approx. 85 million!), which truly indicates the homogenousness in UniProt proteins.
 
 # Dataset and results
-We provide train, validation and testsets for all domains. Notice that fragments are also included for validation and testing, but we do not use them in our work.
+We provide a [script]() to obtain train, validation and test sets for all domains, qualities and protein completion.
 
-| Link         | Partitions | Domain   | Quality | Samples | Mean Length | Fragments |
-|--------------|------------|----------|---------|---------|-------------|-----------|
-| [Download]() | Train      | Eukarya  | High    |         |             | No        |
-| [Download]() | Train      | Eukarya  | High    |         |             | Yes       |
-| [Download]() | Train      | Eukarya  | Low     |         |             | No        |
-| [Download]() | Train      | Eukarya  | Low     |         |             | Yes       |
-| [Download]() | Valid      | Eukarya  | High    |         |             | No        |
-| [Download]() | Valid      | Eukarya  | High    |         |             | Yes       |
-| [Download]() | Test       | Eukarya  | High    |         |             | No        |
-| [Download]() | Test       | Eukarya  | High    |         |             | Yes       |
-| [Download]() | Train      | Bacteria | High    |         |             | No        |
-| [Download]() | Train      | Bacteria | High    |         |             | Yes       |
-| [Download]() | Train      | Bacteria | Low     |         |             | No        |
-| [Download]() | Train      | Bacteria | Low     |         |             | Yes       |
-| [Download]() | Valid      | Bacteria | High    |         |             | No        |
-| [Download]() | Test       | Bacteria | High    |         |             | No        |
-| [Download]() | Train      | Archaea  | High    |         |             | No        |
-| [Download]() | Train      | Archaea  | High    |         |             | Yes       |
-| [Download]() | Train      | Archaea  | Low     |         |             | No        |
-| [Download]() | Train      | Archaea  | Low     |         |             | Yes       |
-| [Download]() | Valid      | Archaea  | High    |         |             | No        |
-| [Download]() | Test       | Archaea  | High    |         |             | No        |
-| [Download]() | Train      | Virus    | High    |         |             | No        |
-| [Download]() | Train      | Virus    | High    |         |             | Yes       |
-| [Download]() | Train      | Virus    | Low     |         |             | No        |
-| [Download]() | Train      | Virus    | Low     |         |             | Yes       |
-| [Download]() | Valid      | Virus    | High    |         |             | No        |
-| [Download]() | Test       | Virus    | High    |         |             | No        |
-
+Examples of script usage:
+Example 1
+```sample 1```
+Example 2
+```sample 2```
+Examples 3
+```sample 3```
 # Citation
 [[PAPER](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CITATION](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CODE](github)]&nbsp;&nbsp;&nbsp;&nbsp;[[DATASET DOWNLOAD](dtu)]
 
