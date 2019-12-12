@@ -33,9 +33,9 @@ We provide a [script]() to obtain train, validation and test sets for all domain
 ```python get_stuff --domain [domain] --complete [complete] --quality [quality]```
 
 Parameters:
-* Domain: [euk, bac, arc, vir]
-* Complete: [full, frag]
-* Quality: [exp, pred]
+* Domain: Eukarya=```euk```, Bacteria=```bac```, Archaea=```arc```, Virus=```vir```
+* Complete: Complete proteins=```full```, Fragmented proteins=```frag```
+* Quality: Experimental evidence=```exp```, Predicted=```pred```
 
 Example 1
 
