@@ -39,15 +39,15 @@ Parameters:
 
 Example 1
 
-```sample 1```
+```python get_data.py --domain euk --complete full --quality exp```
 
 Example 2
 
-```sample 2```
+```python get_data.py --domain arc --complete frag --quality pred```
 
 Examples 3
 
-```sample 3```
+```python get_data.py --domain euk --complete full --quality pred```
 
 # Citation
 [[PAPER](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CITATION](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CODE](github)]&nbsp;&nbsp;&nbsp;&nbsp;[[DATASET DOWNLOAD](dtu)]
