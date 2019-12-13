@@ -26,11 +26,11 @@ If predicted proteins do not overlap they are kept as a predicted training set, 
 This removes about 50% of the predicted proteins (approx. 85 million!), which truly indicates the homogenousness in UniProt proteins.
 
 # Dataset and results
-We provide a [script]() to obtain train, validation and test sets for all domains, qualities and protein completion.
+We provide a [script](https://github.com/alrojo/UniLanguage/blob/master/get_data.py) to obtain train, validation and test sets for all domains, qualities and protein completion.
 
 ## Script usage
 
-```python get_stuff --domain [domain] --complete [complete] --quality [quality]```
+```python get_data.py --domain [domain] --complete [complete] --quality [quality]```
 
 Parameters:
 * Domain: Eukarya=```euk```, Bacteria=```bac```, Archaea=```arc```, Virus=```vir```
