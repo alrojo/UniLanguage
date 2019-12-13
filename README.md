@@ -37,17 +37,17 @@ Parameters:
 * Complete: Complete proteins=```full```, Fragmented proteins=```frag```
 * Quality: Experimental evidence=```exp```, Predicted=```pred```
 
-Example 1
+Example 1: get all the data!
 
-```python get_data.py --domain euk --complete full --quality exp```
+```python get_data.py --all```
 
-Example 2
+Example 2: fragments for archaea, predicted quality
 
 ```python get_data.py --domain arc --complete frag --quality pred```
 
-Examples 3
+Examples 3: complete proteins for Eukarya, full and experimental quality
 
-```python get_data.py --domain euk --complete full --quality pred```
+```python get_data.py --domain euk --complete full --quality exp```
 
 # Citation
 [[PAPER](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CITATION](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CODE](github)]&nbsp;&nbsp;&nbsp;&nbsp;[[DATASET DOWNLOAD](dtu)]
