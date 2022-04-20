@@ -52,4 +52,9 @@ Examples 3: complete proteins for Eukarya, full and experimental quality
 # Citation
 [[PAPER](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CITATION](bioxiv)]&nbsp;&nbsp;&nbsp;&nbsp;[[CODE](github)]&nbsp;&nbsp;&nbsp;&nbsp;[[DATASET DOWNLOAD](dtu)]
 
-PUT IN CITATION
+@article{armenteros2019language,
+  title={Language modelling for biological sequences – curated datasets and baselines},
+  author={Armenteros, Jose Juan Almagro and Johansen, Alexander Rosenberg and Winther, Ole and Nielsen, Henrik},
+  journal={preprint},
+  year={2019},
+}
